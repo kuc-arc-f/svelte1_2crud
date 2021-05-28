@@ -1,3 +1,3 @@
 <div>
-	test 本を探す
+	test page
  </div>

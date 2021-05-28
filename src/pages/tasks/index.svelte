@@ -16,15 +16,19 @@ db.version(config.DB_VERSION).stores( config.DB_STORE );
 
 <!-- -->
 <div>
-	<h3>Tasks - Index</h3>
+	<h3>Tasks - index</h3>
   <a href="/tasks/create" use:link>Create</a>
   <hr />
   {#await get_items(db) }
   <p>Noow Loading.</p>
   {:then items}
     {#each items as item}
-    <p>{item.id} {item.title}
+    <h3><a href={`/tasks/show/${item.id}`} use:link>{item.title}</a>
+    </h3>
+    <p>ID : {item.id}
+      <a href={`/tasks/edit/${item.id}`} use:link> [ edit ]</a>
     </p>
+    <hr />
     {/each}
   {/await}
 </div>

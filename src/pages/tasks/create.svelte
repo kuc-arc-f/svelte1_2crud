@@ -9,19 +9,21 @@ db.version(config.DB_VERSION).stores( config.DB_STORE );
 
 export let name;
 async function handleClick() {
-  alert('clicked')
+//  alert('clicked')
   await add_item()
 }
 async function add_item(){
   try {
+    var elemTitle = document.getElementById('title');
+    var elemContent = document.getElementById('content');
     var item = {
-      title: "t1",
-      content: "c1",
+      title: elemTitle.value,
+      content: elemContent.value,
       created_at: new Date(),
     }
-//      console.log(item)
+//console.log(item)
     await db.tasks.add( item )
-//    Router.push('/tasks');
+    window.location.href = '/#/tasks/'
   } catch (error) {
     console.error(error);
   }    
@@ -30,9 +32,14 @@ async function add_item(){
 
 <!-- -->
 <div>
-	<h3>Tasks - create</h3>
+	<h3>Tasks - Create</h3>
   <hr />
-  
+  <div class="form-group">
+    <label>Title:</label>
+    <input type="text" class="form-control" name="title" id="title" />
+    <label>content:</label>
+    <input type="text" class="form-control" name="content" id="content" />
+  </div>
   <hr />
   <button on:click={handleClick}>Add</button>
 </div>

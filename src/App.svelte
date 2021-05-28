@@ -5,12 +5,16 @@ import index from './pages/index.svelte'
 import test from  './pages/test.svelte'
 import tasks from './pages/tasks/index.svelte'
 import tasks_create from './pages/tasks/create.svelte'
-//
+import tasks_show from './pages/tasks/show.svelte'
+import tasks_edit from './pages/tasks/edit.svelte'
+
 export const routes = {
   '/': index,
   '/test': test,
   '/tasks/': tasks,
   '/tasks/create': tasks_create,
+  '/tasks/show/:id': tasks_show,
+  '/tasks/edit/:id': tasks_edit,
 }	
 </script>
 
