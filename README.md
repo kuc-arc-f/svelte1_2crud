@@ -32,6 +32,7 @@ https://cms-kuc-svelte1-2crud.vercel.app/
 ***
 ### Blog:
 
+https://zenn.dev/knaka0209/articles/8ef99a9d1faac5
 
 ***
 
