@@ -7,6 +7,11 @@ import tasks from './pages/tasks/index.svelte'
 import tasks_create from './pages/tasks/create.svelte'
 import tasks_show from './pages/tasks/show.svelte'
 import tasks_edit from './pages/tasks/edit.svelte'
+//todos
+import todos from './pages/todos/index.svelte'
+import todos_create from './pages/todos/create.svelte'
+import todos_show from './pages/todos/show.svelte'
+import todos_edit from './pages/todos/edit.svelte'
 
 export const routes = {
   '/': index,
@@ -15,6 +20,10 @@ export const routes = {
   '/tasks/create': tasks_create,
   '/tasks/show/:id': tasks_show,
   '/tasks/edit/:id': tasks_edit,
+  '/todos/': todos,
+  '/todos/create': todos_create,
+  '/todos/show/:id': todos_show,
+  '/todos/edit/:id': todos_edit,  
 }	
 </script>
 

@@ -16,6 +16,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/tasks" use:link>Tasks</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/todos" use:link>Todos</a>
+        </li>
+
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">

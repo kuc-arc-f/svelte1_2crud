@@ -1,12 +1,12 @@
 ﻿# svelte1_2crud
 
- Version: 0.9.1
+ Version: 0.9.2
 
  Author  : Kouji Nakashima / kuc-arc-f.com
 
  date    : 2021/05/27
 
- update  : 2021/05/28
+ update  : 2021/06/04 
 
 ***
 ### Summary
