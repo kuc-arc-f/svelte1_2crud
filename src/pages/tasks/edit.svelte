@@ -51,7 +51,7 @@ console.log(item)
 </script>
 
 <!-- -->
-<div>
+<div class="container">
 	<h3>Tasks - edit</h3>
   ID : {params.id}
   <hr />
@@ -66,9 +66,10 @@ console.log(item)
       <input type="text" class="form-control" name="content" id="content"
       value={item.content} />
       <hr />
-      <button on:click={handleClick}>Save</button>
+      <button on:click={handleClick} class="btn btn-primary">Save</button>
       <hr />
-      <button on:click={handleClickDelete}>Delete</button>
+      <button on:click={handleClickDelete} class="btn btn-outline-danger">Delete
+      </button>
     </div>
   {/await}
   

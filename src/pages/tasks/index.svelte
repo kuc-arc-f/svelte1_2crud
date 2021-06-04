@@ -6,6 +6,7 @@ import LibDexie from '../../lib/LibDexie';
 //
 const  get_items = async function (db){
   var items = await db.tasks.toArray()
+  items = LibDexie.get_reverse_items(items)
   return items
 }
 var config = LibTask.get_const()
@@ -15,9 +16,10 @@ db.version(config.DB_VERSION).stores( config.DB_STORE );
 </script>
 
 <!-- -->
-<div>
+<div class="container">
 	<h3>Tasks - index</h3>
-  <a href="/tasks/create" use:link>Create</a>
+  <a href="/tasks/create" use:link class="btn btn-primary">Create
+  </a>
   <hr />
   {#await get_items(db) }
   <p>Noow Loading.</p>
@@ -26,7 +28,8 @@ db.version(config.DB_VERSION).stores( config.DB_STORE );
     <h3><a href={`/tasks/show/${item.id}`} use:link>{item.title}</a>
     </h3>
     <p>ID : {item.id}
-      <a href={`/tasks/edit/${item.id}`} use:link> [ edit ]</a>
+      <a href={`/tasks/edit/${item.id}`} use:link class="ml-2 btn btn-outline-primary">
+        Edit</a>
     </p>
     <hr />
     {/each}

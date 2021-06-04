@@ -31,7 +31,7 @@ async function add_item(){
 </script>
 
 <!-- -->
-<div>
+<div class="container">
 	<h3>Tasks - Create</h3>
   <hr />
   <div class="form-group">
@@ -41,5 +41,5 @@ async function add_item(){
     <input type="text" class="form-control" name="content" id="content" />
   </div>
   <hr />
-  <button on:click={handleClick}>Add</button>
+  <button on:click={handleClick} class="btn btn-primary">Add</button>
 </div>

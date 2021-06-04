@@ -1,6 +1,6 @@
 <script>
 import Router from 'svelte-spa-router'
-import Header from './components/Header.svelte'
+import Navi from './components/Navi.svelte'
 import index from './pages/index.svelte'
 import test from  './pages/test.svelte'
 import tasks from './pages/tasks/index.svelte'
@@ -20,11 +20,12 @@ export const routes = {
 
 <!-- main -->
 <main>
-  <Header />
+  <Navi />
   <Router {routes} />
 </main>
 
 <style>
+  /*
 	main {
 		text-align: center;
 		padding: 1em;
@@ -38,10 +39,10 @@ export const routes = {
 		font-size: 4em;
 		font-weight: 100;
 	}
-
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
 		}
 	}
+  */
 </style>

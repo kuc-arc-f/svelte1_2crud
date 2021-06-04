@@ -15,7 +15,7 @@ export let params = Params
 </script>
 
 <!-- -->
-<div>
+<div class="container">
 	<h3>Tasks - show</h3>
   ID : {params.id}
   <hr />
