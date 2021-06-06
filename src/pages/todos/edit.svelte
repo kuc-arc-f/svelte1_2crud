@@ -1,40 +1,40 @@
 <script>
 import {link} from 'svelte-spa-router'
+import { onMount } from 'svelte';
 import Dexie from 'dexie';  
 import LibTask from '../../lib/LibTask';
 import LibTodos from '../../lib/LibTodos';
 import LibDexie from '../../lib/LibDexie';
 //
 var todo_item = {
-  title: '', content:'',complete: 0,
+  title: '', content:''
 }
-export let params = Params , complete_items = [] , item = todo_item
+var complete_items = LibTodos.get_complete_items()
+console.log(complete_items)
+//export let params = Params , complete_items = [] , item = todo_item
+export let params = Params , item = todo_item ,selected_complete = complete_items[0]
 var config = LibTask.get_const()
 var db = new Dexie( config.DB_NAME );
 db.version(config.DB_VERSION).stores( config.DB_STORE );  
-complete_items = LibTodos.get_complete_items()
-//console.log(complete_items)
 
 function set_complete(item){
-  console.log(item)
-  var elemComplete = document.getElementById('complete');
-  elemComplete.value = item.complete
+  selected_complete = LibTodos.get_selected_complete(complete_items , item.complete)
   var elemTitle = document.getElementById('title');
   var elemContent = document.getElementById('content');
   elemTitle.value =item.title
   elemContent.value = item.content
+//console.log(selected_complete)
 }
 const  get_item = async function (db, id){
   var item = await db.todos.get(parseInt(id) );
-  console.log(item)
   item = item
   set_complete(item)
+//console.log(item)
   return item
 }
 get_item(db, params.id)
 
 async function handleClick() {
-//  alert('clicked')
   await save_item(db)
 }
 async function handleClickDelete() {
@@ -53,11 +53,11 @@ async function save_item(db){
   try {
     var elemTitle = document.getElementById('title');
     var elemContent = document.getElementById('content');
-    var elemComplete = document.getElementById('complete');
+//console.log(parseInt(selected_complete.id))
     await db.todos.update(parseInt(params.id) , {
       title: elemTitle.value,
       content: elemContent.value,
-      complete: elemComplete.value,
+      complete: selected_complete.id,
     });
     window.location.href = '/#/todos/'
   } catch (error) {
@@ -81,9 +81,9 @@ async function save_item(db){
     <hr />
     Complete:
     <select id="complete" name="complete"
-      class="form-select mt-2" value={item.complete}>
+      class="form-select mt-2" bind:value ={selected_complete}>
       {#each complete_items as item}
-        <option value={item.value}>{item.name}</option>
+        <option value={item}>{item.text}</option>
       {/each}
     </select>
     <hr />

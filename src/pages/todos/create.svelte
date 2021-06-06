@@ -19,7 +19,7 @@ async function add_item(){
     var item = {
       title: elemTitle.value,
       content: elemContent.value,
-      complete :0,
+      complete : 0,
       created_at: new Date(),
     }
 //console.log(item)
