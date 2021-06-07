@@ -6,7 +6,7 @@
 
  date    : 2021/05/27
 
- update  : 2021/06/06 
+ update  : 2021/06/07 
 
 ***
 ### Summary
@@ -32,7 +32,7 @@ https://cms-kuc-svelte1-2crud.vercel.app/
 ***
 ### Blog:
 
-https://zenn.dev/knaka0209/articles/8ef99a9d1faac5
+https://zenn.dev/knaka0209/books/7571c1bf92a762/viewer/1bcff0
 
 ***
 

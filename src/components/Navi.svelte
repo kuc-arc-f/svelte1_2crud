@@ -19,7 +19,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/todos" use:link>Todos</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" href="/books" use:link>Books</a>
+        </li>
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">

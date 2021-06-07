@@ -4,12 +4,12 @@
 export default {
   get_const: function(){
     return {
-      DB_NAME: "indexed_kuc_db5",      
+      DB_NAME: "indexed_kuc_db6",      
       DB_VERSION: 1,
       DB_STORE: {
         tasks: '++id, title, content ,created_at',
         todos: '++id, title, content , complete, created_at',
-        books: '++id, category_id, tag_ids, title, content , pub_date, price, created_at',
+        books: '++id, book_type, category_id, tag_ids, title, content , pub_date, price, created_at',
       }
     }
   },
